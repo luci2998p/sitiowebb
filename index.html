@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Control de Video con Play/Pausa</title>
+<link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-j7AEXswbmZbkqJHRZ8c39rGAuPKBN5H/+4L4gVPLz3oIWsDzR4zB7C2oIkWExC3z" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+<style>
+   
+
+</style>
+</head>
+<body>
+<!-- para el primer menu-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link prepago" href="#">Pregrado Presencial</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link prepago" href="#">Pregrado Semipresencial</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link prepago" href="#">Pregrado a Distancia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link prepago" href="#">Posgrado</a>
+        </li>
+        </ul>
+        <!-- Separador -->
+        <li class="navbar-separator"></li>
+        <ul class="clearfix nav navbar-nav">
+          <li class="nav-item">
+                <a href="https://www.utp.edu.pe/postulante" class="nav-link nav-link-https--wwwutpedupe-postulante">Postulante</a>
+          </li>
+            <li class="nav-item">
+                      <a href="https://www.utp.edu.pe/estudiantes" class="nav-link nav-link-https--wwwutpedupe-estudiantes">Estudiantes</a>
+          </li>
+            <li class="nav-item">
+                      <a href="https://www.utp.edu.pe/docentes" class="nav-link nav-link-https--wwwutpedupe-docentes">Docentes</a>
+          </li>
+            <li class="nav-item">
+                      <a href="https://www.utp.edu.pe/alumni" class="nav-link nav-link-https--wwwutpedupe-alumni">Egresados</a>
+          </li>
+        </ul>
+      
+    </div>
+  </div>
+</nav>
+
+<!-- para el segundo menu -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="img/utp.png" alt="" width="150px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Admisión</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Carreras</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Vida UTP</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Investigación</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sobre UTP</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Test Vocacional</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Postula en línea</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- esto es para el video, todo el main -->
+<main style="background-image: url('img/fondo.png');">
+  <video id="bg-video" autoplay muted loop style="display: none;">
+    <source src="video/utpvideo.mp4" type="video/mp4">
+    Tu navegador no soporta el tag de video.
+  </video>
+  <div class="text-over-video">
+    <h1>¿Estás listo para<br>dominar la<br>siguiente ola?</h1>
+    <p>Domina el cambio</p>   
+  </div>
+  <button class="signup-button">Inscríbete</button>
+  
+  <!-- esto es para pausar y dar play al video -->
+  <button class="play-icon" onclick="toggleVideo()">&#9658;</button>
+  <!-- esto es para silenciar y dar sonido al video -->
+  <button class="audio-icon" onclick="toggleMute()">
+    <i class="fas fa-volume-up"></i>
+  </button>
+  <!-- esto es para el icono de whatsapp -->
+  <a href="https://api.whatsapp.com/send?phone=51905435005&text=Hola,%20vengo%20de%20la%20WEB%20y%20quiero%20averiguar%20acerca%20de%20la%20UTP" class="whatsapp-icon" target="_blank">
+    <img src="img/wha.png" alt="WhatsApp" />
+  </a>
+</main>
+
+
+<!------------------ para los iconos de carreras -------------------- -->
+<div class="facultades-container">
+  <div class="facultad"><div class="icon"><i class="fas fa-cog"></i></div>Ingeniería</div>
+  <div class="facultad"><div class="icon"><i class="fas fa-chart-line"></i></div>Negocios</div>
+  <div class="facultad"><div class="icon"><i class="fas fa-balance-scale"></i></div>Derecho</div>
+  <div class="facultad"><div class="icon"><i class="fas fa-book"></i></div>Educación</div>
+  <div class="facultad"><div class="icon"><i class="fas fa-brain"></i></div>Psicología</div>
+  <div class="facultad"><div class="icon"><i class="fas fa-bullhorn"></i></div>Comunicaciones</div>
+  <div class="facultad"><div class="icon"><i class="fas fa-plus-square"></i></div>Salud</div>
+  <div class="facultad"><div class="icon"><i class="fas fa-ruler-combined"></i></div>Arquitectura</div>
+</div>
+
+<!-- para bajar el cuadro azul de miles de estudiantes -->
+
+<!-- cuadro azul miles de estudiantes -->
+
+<section id="formulario" class="formulario sec1">
+  <div class="view-name-field-formulario">
+    <div class="container">
+      <div class="view-header">
+        <BR><BR><BR><BR><BR>
+    <div class="field-name-descripcion">
+            <h2 style="font-weight: bold;">Miles de estudiantes ya construyen&nbsp;<br>sus sueños con nosotros</h2>
+          </div>
+                  </div>
+      <div class="view-content">
+        <div class="row">
+          <div class="col-left col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="col-content">
+            <div class="field-name-bloque">
+     <div class="block formulario-inscripciones block-block-content block-block-content955485b2-6178-4c8c-b86f-90a84f161e17" id="formulario-inscribete">
+
+     <BR><BR><BR>
+  <div class="content">
+  <form id="form-slim-modalidad" action="" autocomplete="off">
+<div id="paso-1" class="paso-1">
+<div class="form-group-row form-group-radios row">
+  <div class="form-radios-inline col-lg-4 col-md-12 col-12 container-radio-subgrado">
+    <input class="form-check-input" type="radio" name="subgrado" id="presencial" value="PRESE" checked="">
+    <label for="presencial">Presencial</label>
+  </div>
+  <div class="form-radios-inline col-lg-4 col-md-12 col-12 container-radio-subgrado">
+    <input class="form-check-input" type="radio" name="subgrado" id="semi_presencial" value="50/50">
+    <label for="semi_presencial">Semi Presencial</label>
+  </div>
+  <div class="form-radios-inline col-lg-4 col-md-12 col-12 container-radio-subgrado">
+            <input class="form-check-input" type="radio" name="subgrado" id="virtual" value="F80/20">
+    <label for="virtual">A Distancia</label>
+  </div>
+</div>
+<div class="form-group-row row">
+  <div class="form-group col-lg-6 col-md-6 col-12">
+    <div class="form-label-group" data-mensaje="Ingrese su nombre">
+      <input type="text" name="nombres" id="nombres" class="form-control no-valid">
+      <label for="nombres">Nombre*</label>
+    </div>          
+  </div>
+  <div class="form-group col-lg-6 col-md-6 col-12">
+    <div class="form-label-group" data-mensaje="Ingrese su apellido">
+      <input type="text" name="apellidos" id="apellidos" class="form-control no-valid">
+      <label for="apellidos">Apellido*</label>
+    </div>          
+  </div>
+  <div class="form-group col-lg-6 col-md-6 col-12">
+    <div class="form-label-group" data-mensaje="Ingrese un número de celular válido">
+      <input type="tel" name="celular" id="celular" class="form-control no-valid" maxlength="9">
+      <label for="celular">Celular*</label>
+    </div>
+  </div>
+  <div class="form-group col-lg-6 col-md-6 col-12">
+    <div class="form-label-group" data-mensaje="Ingrese un DNI válido">
+      <input type="tel" name="dni" id="dni" class="form-control no-valid" maxlength="8">
+      <label for="dni">DNI*</label>
+    </div>
+  </div>
+  <div class="form-group col-12">
+    <div class="form-label-group" data-mensaje="Ingrese un correo válido">
+      <input type="email" name="correo" id="correo" class="form-control no-valid">
+      <label for="correo">Correo electrónico*</label>
+      <span class="vcorreo hidden text-rojo">Campo no válido</span>
+    </div>
+  </div>
+</div>
+<div class="form-group form-politicas">        
+  <div class="form-check" data-mensaje="Seleccione el campo">
+    <input class="form-check-input no-valid" type="checkbox" id="checkbox-politica">
+    <label class="form-check-label" for="checkbox-politica">Declaro expresamente haber leído y aceptado las <a target="_blank" rel="noopener noreferrer" href="/politicas-privacidad">Políticas de Privacidad.</a></label>
+    <p class="mensajes">(*) Campos obligatorios</p>
+  </div>
+
+</div>
+<div class="form-actions">
+  <p> <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6.398 9.194C6.566 9.194 6.65 9.264 6.65 9.404V10.762C6.65 10.818 6.62667 10.874 6.58 10.93C6.54267 10.9767 6.47267 11 6.37 11H0.84C0.662667 11 0.574 10.9207 0.574 10.762V9.404C0.574 9.264 0.653333 9.194 0.812 9.194H2.268C2.37067 9.194 2.422 9.16133 2.422 9.096V3.216C2.422 3.076 2.35667 3.02467 2.226 3.062L0.868 3.468C0.662667 3.51467 0.56 3.426 0.56 3.202V2.278C0.56 2.17533 0.574 2.10533 0.602 2.068C0.63 2.03067 0.686 1.98867 0.77 1.942L3.108 0.78C3.23867 0.714666 3.34133 0.672666 3.416 0.654C3.49067 0.625999 3.584 0.611999 3.696 0.611999H4.662C4.802 0.611999 4.872 0.695999 4.872 0.863999V9.054C4.872 9.14733 4.914 9.194 4.998 9.194H6.398ZM7.61705 11.602C7.50505 11.602 7.46771 11.5647 7.50505 11.49L11.005 0.737999C11.033 0.653999 11.0937 0.611999 11.187 0.611999H11.803C11.9244 0.611999 11.9617 0.686666 11.915 0.836L8.47105 11.434C8.45238 11.4993 8.41971 11.5413 8.37305 11.56C8.33571 11.588 8.28438 11.602 8.21905 11.602H7.61705ZM16.3542 6.646C16.7462 6.27267 17.0775 5.94133 17.3482 5.652C17.6189 5.35333 17.8335 5.078 17.9922 4.826C18.1602 4.56467 18.2815 4.31733 18.3562 4.084C18.4402 3.84133 18.4822 3.594 18.4822 3.342C18.4822 2.94067 18.3795 2.60467 18.1742 2.334C17.9689 2.06333 17.7075 1.86267 17.3902 1.732C17.0822 1.592 16.7555 1.522 16.4102 1.522C16.1395 1.522 15.8595 1.56867 15.5702 1.662C15.2809 1.746 15.0009 1.89067 14.7302 2.096C14.4689 2.30133 14.2309 2.572 14.0162 2.908C13.9975 2.94533 13.9602 2.96867 13.9042 2.978C13.8575 2.98733 13.8015 2.97333 13.7362 2.936L13.1202 2.572C13.0549 2.52533 13.0175 2.47867 13.0082 2.432C13.0082 2.376 13.0269 2.32 13.0642 2.264C13.4935 1.63867 14.0115 1.186 14.6182 0.906C15.2342 0.616666 15.8689 0.472 16.5222 0.472C17.1102 0.472 17.6515 0.579333 18.1462 0.794C18.6409 1.00867 19.0375 1.33067 19.3362 1.76C19.6349 2.18933 19.7842 2.73067 19.7842 3.384C19.7842 3.79467 19.7095 4.182 19.5602 4.546C19.4202 4.91 19.1822 5.288 18.8462 5.68C18.5195 6.072 18.0809 6.52933 17.5302 7.052L14.7162 9.698C14.6602 9.73533 14.6369 9.77267 14.6462 9.81C14.6649 9.84733 14.7162 9.866 14.8002 9.866H19.7142C19.8355 9.866 19.8962 9.91733 19.8962 10.02V10.832C19.8962 10.888 19.8822 10.93 19.8542 10.958C19.8355 10.986 19.7889 11 19.7142 11H13.2182C13.1342 11 13.0735 10.986 13.0362 10.958C13.0082 10.93 12.9942 10.8693 12.9942 10.776V10.202C12.9942 10.1367 12.9989 10.0807 13.0082 10.034C13.0269 9.978 13.0642 9.91733 13.1202 9.852C13.1762 9.78667 13.2602 9.70733 13.3722 9.614L16.3542 6.646Z" fill="#979797"></path>
+    </svg>
+  </p>
+<button id="siguiente" type="submit" class="btn btn-disabled">
+  Siguiente
+
+</button>
+</div>
+</div>
+</form>
+</div>
+</div>  
+</div>
+</div>
+</div>
+
+   <div class="col-right col-xxl-5 col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
+   <div class="col-content">
+     <div class="field_items_1 field_items position-relative">
+   <div class="row">
+       <div class="field_item_1 field_item col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+     <div class="field-name-imagen">
+       <picture class="picture-imagen">
+        <img src="img/familia.JPG" alt="Familia" title="Familia" class="img-fluid">
+       </picture>
+     </div>
+     </div>
+      <div class="field_item_2 field_item col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+      <div class="field-name-imagen">
+        <picture class="picture-imagen">
+          <img src="img/estudiante.JPG" alt="Estudiante brillante" title="Estudiante brillante" class="img-fluid">
+        </picture>
+         </div>
+          </div>
+          </div>
+        </div>
+  <div class="field_items_2 field_items position-relative">
+     <div class="row">
+     <div class="field_item_1 field_item col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+      <div class="field-name-imagen">
+      <picture class="picture-imagen">
+       <img src="img/laboratorioim.JPG" alt="laboratorio" title="laboratorio" class="img-fluid">
+       </picture>
+       </div>
+   </div>
+  <div class="field_item_2 field_item col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+    <div class="field-name-imagen">
+     <picture class="picture-imagen">
+      <img src="img/internaciona.JPG" alt="internacional" title="internacional" class="img-fluid">
+    </picture>
+      </div>
+      </div>
+ <div class="field_item_3 field_item col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+        <div class="field-name-imagen">
+         <picture class="picture-imagen">
+         <img src="img/distancias.JPG" alt="a distancia" title="a distancia" class="img-fluid">
+        </picture>
+         </div>
+          </div>
+         </div>
+         </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function toggleVideo() {
+    var video = document.getElementById('bg-video');
+    var button = document.querySelector('.play-icon');
+    if (video.paused || video.ended) {
+      video.play();
+      video.style.display = 'block'; // Mostrar el video
+      button.innerHTML = '&#10074;&#10074;';
+    } else {
+      video.pause();
+      button.innerHTML = '&#9658;';
+    }
+  }
+
+  function toggleMute() {
+    var video = document.getElementById('bg-video');
+    var icon = document.querySelector('.audio-icon i');
+
+    if (video.muted) {
+      video.muted = false;
+      icon.classList.remove('fa-volume-mute');
+      icon.classList.add('fa-volume-up');
+    } else {
+      video.muted = true;
+      icon.classList.remove('fa-volume-up');
+      icon.classList.add('fa-volume-mute');
+    }
+  }
+</script>
+
+<!-- -----------------para el section POR QUE ESTUDIAR EN LA UTP------------- -->
+<section id="porque-estudiar" class="porque-estudiar section position-relative">
+  <div class="bg-grilla"></div>
+  <div class="container">
+    <div class="view-name-field-porque-estudiar">
+      <div class="view-header titular-barra barra-verde">
+                      <div class="field-name-descripcion">
+                        <br><br><br>
+            <h2 style="font-weight: bold; font-size: 40px;">¿Por qué estudiar en la UTP?</h2>
+          </div>
+                  </div>
+      <div class="view-content">
+        <div class="row">
+          <div class="col-left col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+               <div class="field-name-imagen position-relative">
+                <br><br><br>
+                <picture class="picture-imagen lazy-picture loaded">
+                  <img src="img/juntos.jpg" alt="¿Por qué estudiar&nbsp;en la UTP?" title="¿Por qué estudiar&nbsp;en la UTP?" class="img-fluid" width="" height="">
+                </picture>
+              </div>
+                          </div>
+          <div class="col-right col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
+            <div class="accordion" id="accordionEstudio">
+            <div class="accordion-item">
+                       
+<!--- para los cuadros cicos-->
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionEstudio-2" aria-expanded="false" aria-controls="accordionEstudio-2">
+      <div class="field-name-title-accordion">
+        <div class="rounded-icon">
+          <img src="img/metalla.jpeg" class="icon"><!-- Icono circular -->
+        </div>
+      </div>
+      <div class="field-name-titulo">Educación Moderna con Acreditación Internacional</div>
+    </button>
+  </h2>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionEstudio-2" aria-expanded="false" aria-controls="accordionEstudio-2">
+      <div class="field-name-title-accordion">
+        <div class="rounded-icon">
+          <img src="img/horario.jpeg" class="icon"><!-- Icono circular -->
+        </div>
+      </div>
+      <div class="field-name-titulo">Horarios flexibles en todas las Modalidades</div>
+    </button>
+  </h2>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionEstudio-2" aria-expanded="false" aria-controls="accordionEstudio-2">
+      <div class="field-name-title-accordion">
+        <div class="rounded-icon">
+          <img src="img/maleta.jpeg" class="icon"><!-- Icono circular -->
+        </div>
+      </div>
+      <div class="field-name-titulo">Programas para asegurar tu Empleabilidad</div>
+    </button>
+  </h2>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionEstudio-2" aria-expanded="false" aria-controls="accordionEstudio-2">
+      <div class="field-name-title-accordion">
+        <div class="rounded-icon">
+          <img src="img/lapto.jpeg" class="icon"><!-- Icono circular -->
+        </div>
+      </div>
+      <div class="field-name-titulo">Infraestructura y Tecnología màs Moderna del Mercado</div>
+    </button>
+  </h2>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionEstudio-2" aria-expanded="false" aria-controls="accordionEstudio-2">
+      <div class="field-name-title-accordion">
+        <div class="rounded-icon">
+          <img src="img/manos.jpeg" class="icon"><!-- Icono circular -->
+        </div>
+      </div>
+      <div class="field-name-titulo">Ayuda Economica, Academica y Emocional</div>
+    </button>
+  </h2>
+</div>
+</section>
+
+
+
+<!-- ---------- Tenemos el respaldo de  Intercorp-->
+
+<section id="convenios" class="convenios section">
+  <div class="container">
+    <div class="view-name-field-convenios">
+      <div class="row">
+        <div class="col-left col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div class="col-content">
+                              <div class="field-name-descripcion">
+                                <br><br><br>
+                <h2 style="font-weight: bold; font-size: 40px;">Tenemos el respaldo de&nbsp;<br>Intercorp</h2><p>Contamos con <strong>docentes especializados y la última&nbsp;</strong><br><strong>tecnología</strong> para que transformes tu vida para&nbsp;<br>siempre.</p>
+              </div>
+                          </div>
+        </div>
+        <div class="col-right col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div class="col-content">
+            <div class="field-name-slide-convenios uk-slider" uk-slider="finite: true">
+              <div class="uk-position-relative position-relative">
+                <div class="uk-slider-container overflow-hidden">
+                  <div class="uk-slider-items" style="transform: translate3d(0px, 0px, 0px);">
+                    <div class="views-row col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 uk-active">
+                      <div class="group-images">
+                        <div class="field-name-imagen">
+                          <picture class="picture-imagen">
+                            <img src="img/interbank.png" alt="Interbank" title="Interbank" class="img-fluid" >
+                          </picture>
+                        </div>
+                        <div class="field-name-imagen">
+                          <picture class="picture-imagen">
+                            <img src="img/plazavea.png" alt="Plaza Vea" title="Plaza Vea" class="img-fluid" >
+                          </picture>
+                        </div>
+                        <div class="field-name-imagen">
+                          <picture class="picture-imagen">
+                            <img src="img/oechsle.png" alt="Oeschle" title="Oeschle" class="img-fluid" >
+                          </picture>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="views-row col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 uk-active" >
+                      <div class="group-images">
+                        <div class="field-name-imagen">
+                          <picture class="picture-imagen">
+                            <img src="img/real.png" alt="Real Plaza" title="Real Plaza" class="img-fluid">
+                          </picture>
+                        </div>
+                        <div class="field-name-imagen">
+                          <picture class="picture-imagen">
+                            <img src="img/innova.jpg" alt="Innova Schools" title="Innova Schools" class="img-fluid" >
+                          </picture>
+                        </div>
+                        <div class="field-name-imagen">
+                          <picture class="picture-imagen">
+                            <img src="img/vivanda.png" alt="Vivanda" title="Vivanda" class="img-fluid>
+                          </picture>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="views-row col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6" tabindex="-1">
+                      <div class="group-images">
+                        <div class="field-name-imagen">
+                          <picture class="picture-imagen">
+                            <img src="img/mifarma_logo.png" alt="Inkafarma" title="Inkafarma" class="img-fluid" >
+                          </picture>
+                        </div>
+                        <div class="field-name-imagen">
+                          <picture class="picture-imagen">
+                            <img src="img/cineplanet.png" alt="Cineplanet" title="Cineplanet" class="img-fluid ">
+                          </picture>
+                        </div>
+                        <div class="field-name-imagen">
+                          <picture class="picture-imagen">
+                            <img src="img/Agora.png" alt="Agora" title="Agora" class="img-fluid" >
+                          </picture>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+</div></div>
+
+</section>
+
+<!-- -------------TESTIMONIOS ----------->
+<section id="testimonios" class="testimonios">
+  <div class="container">
+    <div class="view-name-field-testimonios">
+      <div class="view-header">
+        <div class="row">
+          <div class="col-left col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="col-content">
+                                  <div class="field-name-descripcion">
+                                    <br><br>
+                  <h2 style="color: black;">Sueños que se cumplen alrededor del mundo</h2><p style="color: black;">¡Te acompañamos a alcanzar tus sueños con oportunidades internacionales!&nbsp;</p><ul><li style="color: black;">+ 500 convenios internacionales</li><li style="color: black;">Becas de intercambio con las mejores universidades del mundo.</li><li style="color: black;">Clases espejo, movilidad estudiantil, misiones académicas y muchas oportunidades más.</li></ul>
+                </div>
+                              </div>
+          </div>
+          <div class="col-right col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="col-content">
+              <div class="row">
+                                                                                  <div class="field_item_1 position-relative col-auto col-md-4 col-sm-4 col-4">
+                                            <div class="field-name-imagen">
+                                              <br><br>
+                      <picture class="picture-imagen lazy-picture loaded">
+                        <img src="img/Tes2.png" alt="Chica UTP" title="Chica UTP" class="img-fluid" width="114" height="114">
+                      </picture>
+                    </div>
+                  </div>
+                                                                                  <div class="field_item_2 position-relative col-auto col-md-4 col-sm-4 col-4">
+                                           
+                                                                                    <div class="field-name-imagen">
+                                                                                      <br>
+                      <picture class="picture-imagen lazy-picture loaded">
+                        <img src="img/tes1.png" alt="Chico UTP" title="Chico UTP" class="img-fluid" width="114" height="114">
+                      </picture>
+                    </div>
+                  </div>
+                                                                                  <div class="field_item_3 position-relative col-auto col-md-4 col-sm-4 col-4">
+                                              <svg xmlns="http://www.w3.org/2000/svg" width="126" height="141" viewBox="0 0 126 141" fill="none">
+                        <path d="M1 83.0466C23.049 50.0081 68.5683 -12.1592 74.2536 3.47898C79.939 19.1172 36.5335 68.3628 14.12 91.0308C51.1113 58.543 122.852 1.2764 113.887 32.1123C104.922 62.9481 50.5646 90.8473 24.5068 100.942C63.7758 76.6224 138.433 34.8655 122.907 62.3975C107.382 89.9295 58.4913 109.844 35.9868 116.36C69.8803 110.67 131.326 104.522 105.96 125.446C80.595 146.37 48.7424 140.221 35.9868 134.531" stroke="#D01A49" stroke-width="2"></path>
+                      </svg>
+                      <div class="us-box-mini-1 us-box-mini box-rojo position-absolute"></div>
+                                            <div class="field-name-imagen">
+                      <picture class="picture-imagen lazy-picture loaded">
+                        <img src="img/tes3.png" alt="Chico UTP" title="Chico UTP" class="img-fluid" width="114" height="114">
+                      </picture>
+                    </div>
+                  </div>
+                                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="view-content">
+        <div class="field-name-slide-testimonios uk-slider" uk-slider="finite: true">
+          <div class="uk-position-relative position-relative">
+            <div class="uk-slider-container overflow-hidden">
+              <div class="uk-slider-items" style="transform: translate3d(0px, 0px, 0px);">
+                                                              <div class="views-row col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 uk-active" tabindex="-1">
+                      <div class="row">
+                        <div class="col-left col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                          <div class="col-content">
+                                                                                                                                                                    <div class="field-name-imagen position-relative">
+                                <picture class="picture-imagen lazy-picture loaded">
+                                  <img src="img/vide.JPG" alt="Yasmin Campos con diploma del programa" title="Yasmin Campos con diploma del programa" class="img-fluid" width="750" height="750">
+                                </picture>
+                                                                      <div class="field-name-button-testimonio" data-video="/web/sites/default/files/Testimonios/Jasmin%20513%20x%20513%20%281%29.mp4">
+                                  
+                                  </div>
+                                                                  </div>
+                                                          </div>
+                        </div>
+                       
+                        <div class="col-right col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                          <div class="col-content">
+                            <div style="padding: 20px;"></div>
+                            <div class="field-name-descripcion"  style="border-radius: 20px; border:white solid 3px;height: 300px;text-align:justify;">
+                              <div style="padding-left: 20px; padding-right: 20px;">
+                               <br><br>
+                              <h3>Yasmin Campos</h3>
+                              <div class="field-name-cargo">Egresada de psicología</div>
+                              <p><meta charset="utf-8">En la universidad Yas<span style="white-space:pre-wrap;">min se interesó por mejorar la educación de jóvenes y adultos. Por ello buscó oportunidades de trabajo y pasantías que la ayuden a hacerlo. Luego de mucho esfuerzo pudo ser aceptada para estudiar un ciclo en la Facultad de Negocios de la Universidad de Berkeley.</span></p><p><a class="link-testimonio link-scroll" style="color: rgb(253, 11, 108);font-weight: bold;" href="#beneficios">Conoce la experiencia UTP</a></p>
+                             
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                                                        </div>
+            </div>
+            <div class="wrapper-bottom-dot" style="height: 260px;">
+              <ul class="uk-slider-nav uk-dot-number" hidden=""><li uk-slider-item="0" hidden="" class="uk-active"><a href=""></a></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!---------- NOTICIAS------------>
+
+<section id="noticias" class="noticias section">
+  <div class="container">
+    <div class="view-name-field-noticias">
+      <div class="view-header titular-barra">
+                      <div class="field-name-descripcion">
+                        <br>
+            <h5 style="font-size: 30px; font-weight: bold;">Últimas noticias</h5>
+          </div>
+                  </div>
+      <div class="view-content">
+                      <div class="field-name-bloque">
+                                                <div class="views-element-container block block-views block-views-blocknoticias-block-2">
+
+
+  <div class="content">
+  <div><div class="view view-noticias view-id-noticias view-display-id-block_2 js-view-dom-id-e2fc6f7d04d1de5a1f291f5716ba3688dd9d77e0c904193a2f43dd987163df8a">
+
+
+  
+  <div class="view-content">
+  <div class="row">
+        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 views-row">
+<div class="node node--type-noticias node--view-mode-teaser clearfix">
+<div class="node__content clearfix">
+
+
+    <div class="row">
+  <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-4 col-4">
+                            <div class="field-name-imagen">
+      <a href="https://www.utp.edu.pe/noticias/investigacion/docente-de-la-utp-obtuvo-el-primer-puesto-en-el-concurso-nacional-de-invenciones-2022">
+        <picture class="picture-imagen lazy-picture loaded">
+          <img src="img/profe1.JPG" alt="Profesor recibiendo reconocimiento de Indecopi" title="Profesor recibiendo reconocimiento de Indecopi" class="img-fluid" width="575" height="385" loading="lazy">
+        </picture>
+      </a>
+    </div>
+  </div>
+  <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-8 col-8">
+    <a href="https://www.utp.edu.pe/noticias/investigacion/docente-de-la-utp-obtuvo-el-primer-puesto-en-el-concurso-nacional-de-invenciones-2022" style="color: #000000; text-decoration: none;">
+      
+        <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Profesor de Ing. Eléctrica de la UTP ganó primer puesto en Concurso Invenciones de Indecopi</div>
+  
+    </a>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 views-row">
+<div class="node node--type-noticias node--view-mode-teaser clearfix">
+<div class="node__content clearfix">
+
+
+    <div class="row">
+  <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-4 col-4">
+                            <div class="field-name-imagen">
+      <a href="https://www.utp.edu.pe/noticias/investigacion/egresados-y-docentes-utp-desarrollan-sistema-de-reconocimiento-de-placas-vehiculares">
+        <picture class="picture-imagen lazy-picture loaded">
+          <img src="img/carros.JPG" alt="Muestra de cómo el sistema reconoce el número de placa del auto" title="Muestra de cómo el sistema reconoce el número de placa del auto" class="img-fluid" width="575" height="385" loading="lazy">
+        </picture>
+      </a>
+    </div>
+  </div>
+  <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-8 col-8">
+    <a href="https://www.utp.edu.pe/noticias/investigacion/egresados-y-docentes-utp-desarrollan-sistema-de-reconocimiento-de-placas-vehiculares" style="color: #000000; text-decoration: none;">
+      
+        <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Egresados crean sistema de reconocimiento de placas vehiculares con redes neuronales</div>
+  
+    </a>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 views-row">
+<div class="node node--type-noticias node--view-mode-teaser clearfix">
+<div class="node__content clearfix">
+
+
+    <div class="row">
+  <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-4 col-4">
+                            <div class="field-name-imagen">
+      <a href="https://www.utp.edu.pe/noticias/miguel-lopez-cuenta-su-experiencia-en-spark-ar-de-meta-platforms">
+        <picture class="picture-imagen lazy-picture loaded">
+          <img src="img/chicomarro.JPG" alt="Miguel Lopez" title="Miguel Lopez" class="img-fluid" width="575" height="385" loading="lazy">
+        </picture>
+      </a>
+    </div>
+  </div>
+  <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-8 col-8">
+    <a href="https://www.utp.edu.pe/noticias/miguel-lopez-cuenta-su-experiencia-en-spark-ar-de-meta-platforms" style="color: #000000; text-decoration: none;">
+      
+        <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Miguel López cuenta su experiencia en Spark AR de Meta Platforms</div>
+  
+    </a>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+</div>
+
+        <div class="view-footer">
+  <a href="https://www.utp.edu.pe/noticias/">Ver más noticias</a>
+</div>
+</div></div>
+
+</div>
+</div>
+
+                          </div>
+                  </div>
+    </div>
+  </div>
+</section>
+
+<!-- ------------BENEFICIOS---------->
+
+<section id="beneficios" class="beneficios section" style="background-color: #F0F0F0;">
+  <div class="container">
+    <div class="view-name-field-beneficios">
+      <div class="view-header titular-barra barra-verde">
+                      <div class="field-name-descripcion">
+                        <br><br>
+            <h5 style="font-size: 30px; font-weight: bold; color: black;">Experiencia UTP</h5>
+          </div>
+                  </div>
+      <div class="view-content">
+        <div class="row">
+          <div class="col-left col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="col-content">
+              <div class="field-name-accordion">
+                <div class="view-content">
+                  <div class="accordion" id="accordionBeneficios">
+                                                                              <div class="accordion-item">
+                                                            <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionBeneficios-1" aria-expanded="false" aria-controls="accordionBeneficios-1"><span>Te enseñamos inglés para que obtengas tu bachiller sin problemas</span><span class="icono-arrow-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.48 13.42"><path d="M11.24,13.42L.45,2.64c-.6-.6-.6-1.58,0-2.19h0c.6-.6,1.58-.6,2.19,0L11.24,9.05,19.84,.45c.6-.6,1.58-.6,2.19,0h0c.6,.6,.6,1.58,0,2.19L11.24,13.42Z" style="fill: #000;"></path></svg></span></button>
+                            </h2>
+                                                          <div id="accordionBeneficios-1" class="accordion-collapse collapse" data-bs-parent="#accordionBeneficios">
+                            <div class="accordion-body">
+                                                                    <div class="field-name-body-item-accordion"><p><strong>Acredita el conocimiento de un idioma extranjero</strong> con cursos de inglés dentro de tu malla. Con ellos además podrás:</p><ul><li>Descubrir las últimas tendencias en tu carrera</li><li>Llevar un intercambio en el extranjero</li><li>Trabajar en empresas globales</li><li>Acceder a puestos de trabajo mejor remunerados</li></ul></div>
+                                                                </div>
+                          </div>
+                        </div>
+                                                    <div class="accordion-item">
+                                                            <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionBeneficios-2" aria-expanded="false" aria-controls="accordionBeneficios-2"><span>Te preparamos para conseguir trabajo</span><span class="icono-arrow-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.48 13.42"><path d="M11.24,13.42L.45,2.64c-.6-.6-.6-1.58,0-2.19h0c.6-.6,1.58-.6,2.19,0L11.24,9.05,19.84,.45c.6-.6,1.58-.6,2.19,0h0c.6,.6,.6,1.58,0,2.19L11.24,13.42Z" style="fill: #000;"></path></svg></span></button>
+                            </h2>
+                                                          <div id="accordionBeneficios-2" class="accordion-collapse collapse" data-bs-parent="#accordionBeneficios">
+                            <div class="accordion-body">
+                                                                    <div class="field-name-body-item-accordion"><p>Tenemos programas para potenciar tu empleabilidad durante toda tu carrera. Podrás desarrollar tus habilidades de liderazgo, adaptación al cambio y comunicación efectiva. Además podrás simular entrevistas de trabajo.</p><p><span style="white-space:pre-wrap;"><strong>Conoce nuestros programas de empleabilidad:</strong></span></p><ol><li><a href="https://empleabilidad.utp.edu.pe/alumnos/primer-empleo"><span style="white-space:pre-wrap;">Primer empleo</span></a></li><li><a href="https://empleabilidad.utp.edu.pe/alumnos/ruta-laboral-virtual#:~:text=RUTA%20LABORAL%20VIRTUAL%2C%20es%20un,estudiantes%20desde%201%C2%B0%20ciclo."><span style="white-space:pre-wrap;">Ruta laboral virtual</span></a></li><li><a href="https://empleabilidad.utp.edu.pe/alumnos/generacion-top"><span style="white-space:pre-wrap;">Generación TOP</span></a></li><li><a href="https://empleabilidad.utp.edu.pe/alumnos/impulsa"><span style="white-space:pre-wrap;">Programa Impulsa</span></a></li><li><a href="https://empleabilidad.utp.edu.pe/alumnos/egresa-con-potencial"><span style="white-space:pre-wrap;">Egresa con potencial</span></a></li><li><a href="https://empleabilidad.utp.edu.pe/egresados/asesor-de-empleabilidad"><span style="white-space:pre-wrap;">Asesor de empleabilidad</span></a></li></ol></div>
+                                                                </div>
+                          </div>
+                        </div>
+                                                    <div class="accordion-item">
+                                                            <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionBeneficios-3" aria-expanded="false" aria-controls="accordionBeneficios-3"><span>Complementa tu formación en una universidad extranjera</span><span class="icono-arrow-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.48 13.42"><path d="M11.24,13.42L.45,2.64c-.6-.6-.6-1.58,0-2.19h0c.6-.6,1.58-.6,2.19,0L11.24,9.05,19.84,.45c.6-.6,1.58-.6,2.19,0h0c.6,.6,.6,1.58,0,2.19L11.24,13.42Z" style="fill: #000;"></path></svg></span></button>
+                            </h2>
+                                                          <div id="accordionBeneficios-3" class="accordion-collapse collapse" data-bs-parent="#accordionBeneficios">
+                            <div class="accordion-body">
+                                                                    <div class="field-name-body-item-accordion"><p>En el 2022, <strong>más de 300 estudiantes de todos nuestros campus</strong> lograron estudiar en universidades de EE.UU, Europa, Colombia, México, Brasil, Ecuador, Argentina, Chile y Panamá.</p><p>Conoce nuestros programas <a href="https://www.utp.edu.pe/internacional">aquí</a></p></div>
+                                                                </div>
+                          </div>
+                        </div>
+                                                    <div class="accordion-item">
+                                                            <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionBeneficios-4" aria-expanded="false" aria-controls="accordionBeneficios-4"><span>Reforzamos tu formación con talleres extracurriculares de deportes, e-sports , música, danza y muchos más</span><span class="icono-arrow-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.48 13.42"><path d="M11.24,13.42L.45,2.64c-.6-.6-.6-1.58,0-2.19h0c.6-.6,1.58-.6,2.19,0L11.24,9.05,19.84,.45c.6-.6,1.58-.6,2.19,0h0c.6,.6,.6,1.58,0,2.19L11.24,13.42Z" style="fill: #000;"></path></svg></span></button>
+                            </h2>
+                                                          <div id="accordionBeneficios-4" class="accordion-collapse collapse" data-bs-parent="#accordionBeneficios">
+                            <div class="accordion-body">
+                                                                    <div class="field-name-body-item-accordion"><ul><li>Contamos con talleres gratuitos para todas nuestras modalidades de estudio. Presencial, Semipresencial y A distancia.&nbsp;</li><li>Dictados por profesores y especialistas destacados.</li></ul></div>
+                                                                </div>
+                          </div>
+                        </div>
+                                                                        </div>
+                </div>
+              </div>
+                            </div>
+        </div>
+        <div class="col-right col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div class="col-content">
+            <div class="field-name-imagenes">
+              <div class="row">
+                                                                                                                      <div class="field_item_1 field_item col-auto col-md-5 col-sm-5 col-6">
+                                                  <div class="field-name-imagen position-relative">
+                        <picture class="picture-imagen">
+                          <img src="img/doschicos.JPG" class="img-fluid" alt="Chicos creando una estructura" title="Chicos creando una estructura" width="227" height="160">
+                        </picture>
+                                                        <div class="icono">
+                            <svg width="61" height="17" viewBox="0 0 61 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M2 13.75C2 13.75 11.1734 3.25 13.375 3.25C15.5766 3.25 21.8145 13.75 24.75 13.75C27.6855 13.75 34.2904 3.25 36.125 3.25C37.9597 3.25 45.6654 13.75 47.5001 13.75C49.3347 13.75 58.8751 3.25 58.8751 3.25" stroke="#00B491" stroke-width="5.25"></path>
+                            </svg>
+                          </div>
+                                                    </div>
+                    </div>
+                                                                                                <div class="field_item_2 field_item col-auto col-md-5 col-sm-5 col-6">
+                                                    <div class="icono">
+                          <img src="img/borroso.jpeg" alt="passport" title="passport">
+                        </div>
+                        <br><br>
+                                                  <div class="field-name-imagen position-relative">
+                        <picture class="picture-imagen">
+                          <img src="img/doschicas.JPG" class="img-fluid" alt="Alumna en pasantía en la Universidad de Berkeley" title="Alumna en pasantía en la Universidad de Berkeley" width="228" height="171">
+                        </picture>
+                                                    </div>
+                    </div>
+                                                            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- -------------horarios------->
+<section id="horarios" class="horarios section">
+<div class="container">
+  <div class="view-name-field-horarios">
+    <div class="view-header titular-barra">
+                    <div class="field-name-descripcion">
+          <h2>Tenemos el horario que buscas</h2>
+        </div>
+                </div>
+    <div class="view-content">
+                    <div class="field-name-accordion">
+          <div class="accordion" id="accordionHorarios">
+            <div class="row">
+                                                            <div class="accordion-item col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                                                <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionHorarios-1" aria-expanded="false" aria-controls="accordionHorarios-1"><span>Presencial</span><span class="icono-arrow-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.48 13.42"><path d="M11.24,13.42L.45,2.64c-.6-.6-.6-1.58,0-2.19h0c.6-.6,1.58-.6,2.19,0L11.24,9.05,19.84,.45c.6-.6,1.58-.6,2.19,0h0c.6,.6,.6,1.58,0,2.19L11.24,13.42Z" style="fill: #000;"></path></svg></span></button>
+                      </h3>
+                                              <div id="accordionHorarios-1" class="accordion-collapse collapse" data-bs-parent="#accordionHorarios">
+                      <div class="accordion-body">
+                                                        <div class="inner-accordion-body position-relative">
+                                                                                                    <div class="field-name-icono-item-accordion"><svg xmlns="http://www.w3.org/2000/svg" width="38" height="34" viewBox="0 0 38 34" fill="none">
+<path d="M20.9669 30.7665L23.2308 33L23.7509 30.4112C23.8484 29.872 24.0663 29.3616 24.3887 28.9176C24.7111 28.4736 25.1296 28.1075 25.6133 27.8463C26.0969 27.585 26.6334 27.4354 27.183 27.4084C27.7326 27.3814 28.2813 27.4778 28.7885 27.6904V27.6904L28.6865 27.3959C28.5057 26.887 28.4413 26.3443 28.4981 25.8074C28.555 25.2706 28.7316 24.7531 29.015 24.2929C29.2984 23.8327 29.6815 23.4413 30.1363 23.1474C30.5911 22.8534 31.1062 22.6643 31.6438 22.5939L36.1205 21.9848L32.9083 19.335C32.4853 18.9869 32.1471 18.5478 31.9191 18.0507C31.6911 17.5537 31.5793 17.0117 31.5921 16.4655C31.6048 15.9192 31.7419 15.383 31.9928 14.897C32.2437 14.4111 32.6021 13.9881 33.0409 13.6599V13.6599C33.0409 13.6599 28.7578 11.1523 30.522 8.58376L34.081 2.40101L27.473 5.50762C26.9976 5.73326 26.4753 5.8436 25.9489 5.8296C25.4224 5.81561 24.9068 5.67767 24.4442 5.4271C23.9816 5.17652 23.5852 4.82043 23.2874 4.38798C22.9897 3.95553 22.799 3.459 22.7311 2.93908V2.93908L22.5271 3.17259C21.69 4.022 20.5483 4.50558 19.353 4.517C18.1578 4.52843 17.007 4.06675 16.1536 3.2335L13.8897 1L13.3696 3.58882C13.2721 4.12798 13.0542 4.63842 12.7318 5.08239C12.4094 5.52635 11.9909 5.89251 11.5073 6.15374C11.0236 6.41497 10.4871 6.56461 9.93747 6.5916C9.38787 6.61858 8.83917 6.52222 8.33202 6.30964L8.43404 6.60405C8.61486 7.11299 8.67921 7.65572 8.62238 8.19258C8.56554 8.72944 8.38895 9.24688 8.10553 9.7071C7.8221 10.1673 7.439 10.5587 6.98419 10.8526C6.52938 11.1466 6.01432 11.3357 5.4767 11.4061L1 12.0152L4.21221 14.665C4.63521 15.0131 4.97344 15.4522 5.20141 15.9492C5.42938 16.4463 5.54119 16.9883 5.52843 17.5346C5.51567 18.0808 5.37865 18.617 5.12772 19.103C4.87678 19.5889 4.51843 20.0119 4.07964 20.3401V20.3401L4.38555 20.401C4.91415 20.5055 5.4134 20.7239 5.84816 21.041C6.28292 21.358 6.64266 21.766 6.90215 22.2362C7.16164 22.7064 7.31454 23.2275 7.35017 23.7629C7.38579 24.2982 7.30328 24.8348 7.10836 25.335C6.68006 26.6041 5.41552 29.5787 5.41552 29.5787L9.32122 28.0457C9.83791 27.8548 10.3912 27.7825 10.9399 27.8342C11.4885 27.8859 12.0184 28.0602 12.49 28.3443C12.9615 28.6283 13.3625 29.0146 13.6632 29.4744C13.9638 29.9343 14.1563 30.4558 14.2263 31V31C15.1903 30.2778 16.354 29.8681 17.5597 29.8263C18.7654 29.7845 19.9548 30.1128 20.9669 30.7665Z" stroke="#020202" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M18.5605 25.609C23.3477 25.609 27.2285 21.7455 27.2285 16.9795C27.2285 12.2136 23.3477 8.3501 18.5605 8.3501C13.7734 8.3501 9.89258 12.2136 9.89258 16.9795C9.89258 21.7455 13.7734 25.609 18.5605 25.609Z" stroke="#020202" stroke-width="2" stroke-linejoin="round"></path>
+</svg></div>
+                                                              <div class="field-name-body-item-accordion"><p><strong>Presencial Día</strong></p><p>Lunes a sábado de 8:00 am a 6:00 pm</p><p><a class="link-btn-primary" href="#formulario-inscribete">Seleccionar</a></p></div>
+                          </div>
+                                                        <div class="inner-accordion-body position-relative">
+                                                                                                    <div class="field-name-icono-item-accordion"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="34" viewBox="0 0 35 34" fill="none">
+<path d="M27.6602 1.89844V4.3282" stroke="#020202" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M27.6602 6.75879V9.18856" stroke="#020202" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M28.877 5.54395H31.3067" stroke="#020202" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M24.0176 5.54395H26.4473" stroke="#020202" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M24.0176 12.833V15.2628" stroke="#020202" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M24.0176 17.6924V20.1221" stroke="#020202" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M25.2305 16.4775H27.6602" stroke="#020202" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M20.3711 16.4775H22.8009" stroke="#020202" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M12.0627 19.3809C10.5585 16.2651 10.3534 12.6794 11.4925 9.41239C12.6316 6.14537 15.0217 3.46452 18.1371 1.95948C18.7125 1.68995 19.305 1.45865 19.9108 1.26702C17.0018 0.728803 14.0005 1.00764 11.2404 2.07259C8.48033 3.13754 6.06955 4.94689 4.27594 7.29958C2.48232 9.65227 1.37612 12.4562 1.08023 15.3997C0.784347 18.3433 1.31036 21.3113 2.59984 23.9739C3.88932 26.6365 5.89175 28.8895 8.38466 30.4825C10.8776 32.0754 13.7633 32.946 16.7213 32.9976C19.6793 33.0491 22.5936 32.2795 25.1405 30.7744C27.6874 29.2692 29.7671 27.0873 31.1485 24.4713C30.6262 24.8311 30.078 25.1519 29.5084 25.431C27.9665 26.1837 26.291 26.6244 24.5782 26.7275C22.8655 26.8307 21.1492 26.5944 19.528 26.0322C17.9069 25.47 16.4128 24.5929 15.1317 23.4515C13.8505 22.31 12.8076 20.9267 12.0627 19.3809V19.3809Z" stroke="#020202" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M34.9513 14.0479H32.5215" stroke="#020202" stroke-width="2" stroke-linejoin="round"></path>
+</svg></div>
+                                                              <div class="field-name-body-item-accordion"><p><strong>Presencial noche</strong></p><p>Lunes a viernes de 6:30 pm a 10:30 pm&nbsp;&nbsp;<br>Sábados de 2:00 pm a 10:30 pm</p><p><a class="link-btn-primary" href="#formulario-inscribete">Seleccionar</a></p></div>
+                          </div>
+                                                    </div>
+                    </div>
+                  </div>
+                                        <div class="accordion-item col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                                                <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionHorarios-2" aria-expanded="false" aria-controls="accordionHorarios-2"><span>Semipresencial</span><span class="icono-arrow-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.48 13.42"><path d="M11.24,13.42L.45,2.64c-.6-.6-.6-1.58,0-2.19h0c.6-.6,1.58-.6,2.19,0L11.24,9.05,19.84,.45c.6-.6,1.58-.6,2.19,0h0c.6,.6,.6,1.58,0,2.19L11.24,13.42Z" style="fill: #000;"></path></svg></span></button>
+                      </h3>
+                                              <div id="accordionHorarios-2" class="accordion-collapse collapse" data-bs-parent="#accordionHorarios">
+                      <div class="accordion-body">
+                                                        <div class="inner-accordion-body position-relative">
+                                                                                                    <div class="field-name-icono-item-accordion"><svg xmlns="http://www.w3.org/2000/svg" width="37" height="26" viewBox="0 0 37 26" fill="none">
+<path d="M9.64078 10.6C7.37158 10.6 5.80078 8.75799 5.80078 6.48639V5.1136C5.80078 2.842 7.37158 1 9.64078 1C11.91 1 13.4808 2.842 13.4808 5.1136V6.48639C13.4808 8.75799 11.91 10.6 9.64078 10.6Z" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M1 24.9995C1 24.9995 1.63 19.6595 1.96 17.3195C2.29 14.9795 3.688 13.4795 5.8 13.4795H6.52C6.89671 13.4795 7.26906 13.5602 7.61202 13.716C7.95499 13.8719 8.26061 14.0993 8.50839 14.3831L14.422 21.1595H20.182C20.182 21.1595 20.6116 24.9995 17.302 24.9995H11.56L6.76 20.1995" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M15.8164 17.6577L19.2412 12.5205H34.6012L28.8412 22.1205H23.0812" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M7.71875 25H36.5187" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+</svg></div>
+                                                              <div class="field-name-body-item-accordion"><p><strong>1 día presencial</strong></p><p>1 día presencial de lunes a viernes de 6:30 pm hasta las 10:30 pm o los sábados desde las 2:00 pm</p><p><a class="link-btn-primary" href="#formulario-inscribete">Seleccionar</a></p></div>
+                          </div>
+                                                        <div class="inner-accordion-body position-relative">
+                                                                                                    <div class="field-name-icono-item-accordion"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="34" viewBox="0 0 36 34" fill="none">
+<path d="M7.55558 8.27273C9.22103 8.27273 10.4647 6.87727 10.4647 5.15636V4.11637C10.4647 2.39546 9.22103 1 7.55558 1C5.89012 1 4.64648 2.39546 4.64648 4.11637V5.15636C4.64648 6.87727 5.89012 8.27273 7.55558 8.27273Z" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M11.1818 33.004V14.0949L14.4318 13.3676C16.25 13.0267 17 12.0721 17 10.4585H4.63636C2.03 10.4585 1 11.5576 1 14.8221V19.913C1 21.473 1.62182 22.8221 3.18182 22.8221H3.90909" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M7.54102 20.6353V32.9989" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M3.91602 14.8228V33.0046" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M14.084 8.27668V3.18577C14.084 2.99288 14.1606 2.80791 14.297 2.67152C14.4334 2.53513 14.6184 2.4585 14.8113 2.4585H16.2658" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M32.2658 2.4585H33.7204C33.9132 2.4585 34.0982 2.53513 34.2346 2.67152C34.371 2.80791 34.4476 2.99288 34.4476 3.18577V21.3676C34.4476 21.5605 34.371 21.7454 34.2346 21.8818C34.0982 22.0182 33.9132 22.0949 33.7204 22.0949H14.8113C14.6184 22.0949 14.4334 22.0182 14.297 21.8818C14.1606 21.7454 14.084 21.5605 14.084 21.3676V16.2767" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M30.084 1V3.18182" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M20.6465 2.4585H27.9192" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M18.459 1V3.18182" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M21.3535 10.4585H23.5353" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M25 10.4585H27.1818" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M28.6465 10.4585H30.8283" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M17.7285 14.0938H19.9103" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M21.3535 14.0938H23.5353" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M25 14.0938H27.1818" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M28.6465 14.0938H30.8283" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M17.7285 17.729H19.9103" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M21.3535 17.729H23.5353" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M25 17.729H27.1818" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M14.084 6.82275H34.4476" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+</svg></div>
+                                                              <div class="field-name-body-item-accordion"><p><strong>2 días presencial</strong></p><p>Lima: Estudia presencial los viernes desde las 6:30pm y los sábados desde las 2:00 pm</p><p>Provincias: Estudia presencial los sábados y domingos</p><p><a class="link-btn-primary" href="#formulario-inscribete">Seleccionar</a></p></div>
+                          </div>
+                                                        <div class="inner-accordion-body position-relative">
+                                                                                                    <div class="field-name-icono-item-accordion"><svg xmlns="http://www.w3.org/2000/svg" width="37" height="26" viewBox="0 0 37 26" fill="none">
+<path d="M28.75 3.25H32.5L35.5 25H7.75L4.75 3.25H9.25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M5.5 8.5H32.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M26.5 1V4.75" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M13.75 3.25H24.25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M11.5 1V4.75" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M4.75 3.25H4L1 25H4.75" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M29.5 8.5H5.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M17.5 13H19.75" stroke="black" stroke-width="2" stroke-miterlimit="10"></path>
+<path d="M21.25 13H23.5" stroke="black" stroke-width="2" stroke-miterlimit="10"></path>
+<path d="M25 13H27.25" stroke="black" stroke-width="2" stroke-miterlimit="10"></path>
+<path d="M13.75 16.75H16" stroke="black" stroke-width="2" stroke-miterlimit="10"></path>
+<path d="M17.5 16.75H19.75" stroke="black" stroke-width="2" stroke-miterlimit="10"></path>
+<path d="M21.25 16.75H23.5" stroke="black" stroke-width="2" stroke-miterlimit="10"></path>
+<path d="M25 16.75H27.25" stroke="black" stroke-width="2" stroke-miterlimit="10"></path>
+<path d="M13.75 20.5H16" stroke="black" stroke-width="2" stroke-miterlimit="10"></path>
+<path d="M17.5 20.5H19.75" stroke="black" stroke-width="2" stroke-miterlimit="10"></path>
+<path d="M21.25 20.5H23.5" stroke="black" stroke-width="2" stroke-miterlimit="10"></path>
+</svg></div>
+                                                              <div class="field-name-body-item-accordion"><p><strong>3 días presencial</strong></p><p>3 días presencial de lunes a viernes de 6:30 pm hasta las 10:30 pm y los sábados desde las 2:00 pm</p><p><a class="link-btn-primary" href="#formulario-inscribete">Seleccionar</a></p></div>
+                          </div>
+                                                    </div>
+                    </div>
+                  </div>
+                                        <div class="accordion-item col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                                                <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionHorarios-3" aria-expanded="false" aria-controls="accordionHorarios-3"><span>A distancia</span><span class="icono-arrow-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.48 13.42"><path d="M11.24,13.42L.45,2.64c-.6-.6-.6-1.58,0-2.19h0c.6-.6,1.58-.6,2.19,0L11.24,9.05,19.84,.45c.6-.6,1.58-.6,2.19,0h0c.6,.6,.6,1.58,0,2.19L11.24,13.42Z" style="fill: #000;"></path></svg></span></button>
+                      </h3>
+                                              <div id="accordionHorarios-3" class="accordion-collapse collapse" data-bs-parent="#accordionHorarios">
+                      <div class="accordion-body">
+                                                        <div class="inner-accordion-body position-relative">
+                                                                                                    <div class="field-name-icono-item-accordion"><svg width="31" height="28" viewBox="0 0 31 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.1315 16.4998V15.6841C17.1315 14.232 13.0933 12.4209 9.78937 12.4209C6.48542 12.4209 2.44727 15.0477 2.44727 16.4998V24.6577" stroke="black" stroke-width="2" stroke-miterlimit="10"></path>
+<path d="M10.1974 1C8.29663 1 6.52637 2.44395 6.52637 4.23053V6.74316C6.52637 8.52974 8.29663 9.97368 10.1974 9.97368C12.0982 9.97368 13.8685 8.52974 13.8685 6.74316V4.23053C13.8685 2.44395 12.0982 1 10.1974 1Z" stroke="black" stroke-width="2" stroke-miterlimit="10"></path>
+<path d="M21.2106 26.2897L25.2895 18.1318H13.8685L11.4211 23.8424H6.52637" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M0 26.2891H31" stroke="black" stroke-width="2" stroke-linejoin="round"></path>
+</svg>
+</div>
+                                                              <div class="field-name-body-item-accordion"><p><strong>Súper flexible</strong></p><p><span style="white-space:pre-wrap;">Estudia desde cualquier parte del país.</span></p><p><a class="link-btn-primary" href="#formulario-inscribete">Seleccionar</a></p></div>
+                          </div>
+                                                    </div>
+                    </div>
+                  </div>
+                                                      </div>
+          </div>
+        </div>
+                </div>
+  </div>
+</div>
+</section>
+  
+    <div class="chat-utp view-header " >
+      <br><br>
+      <h5>Te presentamos Chat UTP</h5><p>Nuestro chat que usa Inteligencia Artificial para responder tus&nbsp;&nbsp;&nbsp;&nbsp;<br>dudas sobre la UTP.</p><ul class="nav"><li><a href="https://www.utp"></li>
+       </div>
+
+<div class="edificios" style="text-align: center;">
+  <img src="img/edi1.JPG">
+  <img src="img/edi2.JPG">
+  <img src="img/edi3.JPG">
+  <img src="img/edi4.JPG">
+</div>
+
+
+<!-- espacio  -->
+
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="region region-footer-top">
+      <div class="row">
+        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12 footer-izquierda">
+            <section class="region region-footer-izquierda">
+<nav role="navigation" aria-labelledby="block-utp-navegacioncampus-menu" id="block-utp-navegacioncampus" class="titulo-footer bloque-menu-campus block block-menu navigation menu--navegacion-campus">
+
+  <h2 id="block-utp-navegacioncampus-menu" class="titulo-footer bloque-menu-campus block block-menu navigation menu--navegacion-campus">Nuestros campus</h2>
+
+ <!-- Para el footer donde van las cedes de campus-->
+    
+  <ul class="clearfix nav navbar-nav locations-nav">
+    <!-- Primera fila: desde Arequipa hasta Ica -->
+    <div class="row">
+        <li class="nav-item">
+            <a href="https://www.utp.edu.pe/arequipa" class="nav-link">Arequipa</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://www.utp.edu.pe/chiclayo" class="nav-link">Chiclayo</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://www.utp.edu.pe/chimbote" class="nav-link">Chimbote</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://www.utp.edu.pe/huancayo" class="nav-link">Huancayo</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://www.utp.edu.pe/ica" class="nav-link">Ica</a>
+        </li>
+    </div>
+
+    <!-- Segunda fila: desde Lima Centro hasta Lima Este - SJL -->
+    <div class="row">
+        <li class="nav-item">
+            <a href="https://www.utp.edu.pe/lima-centro" class="nav-link">Lima Centro</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://www.utp.edu.pe/ate" class="nav-link">Lima Este - Ate</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://www.utp.edu.pe/sjl" class="nav-link">Lima Este - SJL</a>
+        </li>
+    </div>
+
+    <!-- Tercera fila: desde Lima Norte hasta Trujillo -->
+    <div class="row">
+        <li class="nav-item">
+            <a href="https://www.utp.edu.pe/lima-norte" class="nav-link">Lima Norte</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://www.utp.edu.pe/lima-sur" class="nav-link">Lima Sur</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://www.utp.edu.pe/piura" class="nav-link">Piura</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://www.utp.edu.pe/trujillo" class="nav-link">Trujillo</a>
+        </li>
+    </div>
+</ul>
+</nav>
+
+ <!-- Para los cuadros semi redondos del footer -->
+
+ <div class="link-group">
+  <div class="link-container first-link">
+      <a href="https://resultadosadmision.utp.edu.pe/">Resultados de Admisión 2024 - Ciclo Marzo</a>
+  </div>
+  <div class="link-container black-background briefcase">
+      <a href="https://trabajaenutp.evaluar.com/"><i class="fas fa-briefcase"></i> Trabaja en UTP</a>
+  </div>
+</div>
+<div class="link-container black-background gps">
+  <a href="https://www.utp.edu.pe/2020/retomamos-atencion-presencial"><i class="fas fa-map-marker-alt"></i> Ubica nuestras sedes</a>
+</div>
+
+</section>
+
+</div>
+
+
+<!-- -------------para el resto del footer ------------------- -->
+<div class="contact-info">
+  <ul class="upper-row">
+      <li class="info-block">
+          <h5><svg ...></svg>Postulantes</h5>
+          <p>Lima: <a href="tel:013159610">(01) 315 9610</a> | Provincia: <a href="tel:0801 19 610">0801 19 610</a></p>
+          <p>WhatsApp: <a href="https://bit.ly/ConversaUTP_WA" target="_blank">https://bit.ly/ConversaUTP_WA</a></p>
+          <p>Correo: <a href="mailto:admision@utp.edu.pe">admision@utp.edu.pe</a></p>
+      </li>
+      <li class="info-block">
+          <h5><svg ...></svg>Horario de atención:</h5>
+          <p><strong>Postulantes</strong></p>
+          <p>Lun - Sab: 8:30 a.m. a 8:00 p.m.</p>
+      </li>
+  </ul>
+  <ul class="lower-row">
+      <li class="info-block">
+          <h5><svg ...></svg>Alumnos (SAE):</h5>
+          <p>Lima: <a href="tel:013159600">(01) 315 9600</a> | Provincia: <a href="tel:0801 19 600">0801 19 600</a></p>
+          <p>WhatsApp: <a href="https://bit.ly/contacto_SAE">bit.ly/contacto_SAE</a></p>
+      </li>
+      <li class="info-block">
+          <h5><svg ...></svg>Alumnos (SAE):</h5>
+          <p><strong>Horario</strong></p>
+          <p>Lun - Vie: 7:00 a.m. a 10:00 p.m.</p>
+          <p>Sáb - Dom: 7:00 a.m. a 8:00 p.m</p>
+          <p>UTP S.A.C. RUC: 20462509236</p>
+      </li>
+  </ul>
+  
+</div>
+<!-- -------------raya divisora------------------- -->
+<hr class="footer-line">
+<!-- ------lo que va debajo de la raya---------- -->
+
+<section class="region region-footer">
+  <nav role="navigation" aria-labelledby="block-utp-navegacionrrss-menu" id="block-utp-navegacionrrss" class="menu-bloque-iconos-rrss block block-menu navigation menu--navegacion-rrss">
+            <ul class="clearfix nav">
+                  <li class="nav-item">
+                        <a href="https://www.facebook.com/UTP.Peru/" rel="nofollow" class="nav-link" target="_blank">
+          <svg fill="none" height="20" viewBox="0 0 10 20" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M0 5.75557H2.06877V4.68539C2.06877 3.48567 2.19473 2.59117 2.44664 2.00189C2.69856 1.4126 3.16322 0.930898 3.84064 0.556774C4.517 0.185861 5.37251 0.000270751 6.40716 3.13696e-06C7.46441 -0.000825323 8.51553 0.162446 9.52381 0.484117L9.02051 3.11342C8.46041 2.97422 7.88612 2.90187 7.30937 2.89786C6.76915 2.89786 6.38334 3.02712 6.14876 3.28082C5.91418 3.53451 5.79669 4.02505 5.79669 4.74962V5.75317H8.58389V8.72007H5.79748V20H2.06877V8.72007H0V5.75557Z" fill="#231F20"></path></svg>
+        </a>
+                    </li>
+              <li class="nav-item">
+                        <a href="https://www.youtube.com/channel/UCLQEBv7WN0SgOFD_nRLraRQ" rel="nofollow" class="nav-link" target="_blank">
+          <svg fill="none" height="14" viewBox="0 0 23 14" width="23" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M18.6081 13.6525C20.344 13.4204 21.6331 12.2453 21.8284 10.4322C21.9839 9.29807 22.0609 8.15451 22.0591 7.00973C22.0591 5.56337 21.9323 4.51249 21.8654 3.95741C21.8478 3.81135 21.8343 3.69961 21.8284 3.62404C21.681 1.75747 20.4399 0.641417 18.6081 0.403752C16.7304 0.160528 15.3489 0 11.0403 0C6.71716 0 5.32731 0.114663 3.45101 0.403752C1.65879 0.679638 0.388465 1.82488 0.230716 3.62404C0.224877 3.69067 0.212853 3.79599 0.197221 3.93293C0.130996 4.51304 0 5.66054 0 6.83669C0 8.4752 0.131373 9.57854 0.197773 10.1362C0.2129 10.2632 0.224656 10.362 0.230716 10.4322C0.388465 12.2627 1.65879 13.419 3.45101 13.6525C5.33426 13.8992 6.82557 14 11.0403 14C15.1188 14 16.7318 13.9055 18.6081 13.6525ZM14.376 6.90624L9.52675 9.7061V4.10638L14.376 6.90624Z" fill="black" fill-rule="evenodd"></path></svg>
+        </a>
+                    </li>
+              <li class="nav-item">
+                        <a href="https://www.linkedin.com/edu/universidad-tecnol%C3%B3gica-del-per%C3%BA-15621" rel="nofollow" class="nav-link" target="_blank">
+          <svg fill="none" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0.234741 15.8906H3.51599V5.29688H0.234741V15.8906Z" fill="black"></path><path d="M1.92261 0C2.98279 0 3.84338 0.860962 3.84338 1.92169C3.84338 2.98279 2.98279 3.84375 1.92261 3.84375C0.858398 3.84375 0 2.98279 0 1.92169C0 0.860962 0.858398 0 1.92261 0Z" fill="black"></path><path d="M11.874 5.10938C15.1961 5.10938 15.7969 7.21857 15.7969 10.0624V15.8906H12.5625V10.7183C12.5625 9.49402 12.5079 7.91876 10.8237 7.91876C9.11627 7.91876 8.76562 9.25323 8.76562 10.6307V15.8906H5.57812V5.29688H8.76562V6.73792H8.76874C9.20618 5.90771 10.2777 5.10938 11.874 5.10938Z" fill="black"></path></svg>
+        </a>
+                    </li>
+              <li class="nav-item">
+                        <a href="https://www.instagram.com/universidadutp/" rel="nofollow" class="nav-link" target="_blank">
+          <svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M10.0034 4.8645C7.16762 4.8645 4.87183 7.1628 4.87183 9.99608C4.87183 12.8319 7.17012 15.1277 10.0034 15.1277C12.8392 15.1277 15.135 12.8294 15.135 9.99608C15.135 7.1603 12.8367 4.8645 10.0034 4.8645ZM10.0034 13.3269C8.1626 13.3269 6.67263 11.836 6.67263 9.99608C6.67263 8.15611 8.16343 6.6653 10.0034 6.6653C11.8434 6.6653 13.3342 8.15611 13.3342 9.99608C13.335 11.836 11.8442 13.3269 10.0034 13.3269Z" fill="black"></path><path d="M14.1233 0.0628211C12.2833 -0.0230107 7.72589 -0.0188441 5.88425 0.0628211C4.26595 0.138653 2.83847 0.529479 1.68766 1.68029C-0.23564 3.60359 0.0101892 6.19521 0.0101892 9.99598C0.0101892 13.8859 -0.206474 16.4175 1.68766 18.3117C3.61846 20.2416 6.24758 19.9891 10.0033 19.9891C13.8566 19.9891 15.1866 19.9916 16.5491 19.4641C18.4015 18.745 19.7998 17.0892 19.9365 14.1151C20.0232 12.2743 20.0182 7.71769 19.9365 5.87605C19.7715 2.36528 17.8874 0.236151 14.1233 0.0628211ZM17.0357 17.0392C15.7749 18.3 14.0258 18.1875 9.97918 18.1875C5.81259 18.1875 4.14178 18.2492 2.92264 17.0267C1.5185 15.6292 1.77266 13.3851 1.77266 9.98265C1.77266 5.37856 1.30017 2.06279 5.92092 1.82612C6.98257 1.78862 7.29506 1.77612 9.96751 1.77612L10.005 1.80112C14.4458 1.80112 17.9299 1.33613 18.139 5.95605C18.1865 7.0102 18.1974 7.32686 18.1974 9.99515C18.1965 14.1134 18.2749 15.7942 17.0357 17.0392Z" fill="black"></path><path d="M15.3383 5.86094C16.0006 5.86094 16.5375 5.32406 16.5375 4.66179C16.5375 3.99952 16.0006 3.46265 15.3383 3.46265C14.676 3.46265 14.1392 3.99952 14.1392 4.66179C14.1392 5.32406 14.676 5.86094 15.3383 5.86094Z" fill="black"></path></svg>
+        </a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a href="https://www.utp.edu.pe/politicas-privacidad" class="nav-link">Políticas de privacidad</a>
+                  </li>
+            <li class="nav-item">
+                      <a href="https://www.utp.edu.pe/transparencia" class="nav-link">Portal de transparencia</a>
+                  </li>
+            <li class="nav-item">
+                      <a href="" class="nav-link">Términos y condiciones</a>
+                  </li>
+            <li class="nav-item">
+                      <a href="" class="nav-link">Mapa del sitio</a>
+                  </li>
+            <li class="nav-item">
+                      <a href="https://librodereclamaciones.utp.edu.pe/" rel="nofollow" class="nav-link" target="_blank">
+        <img src="https://www.utp.edu.pe/sites/default/files/inline-images/libro-reclamaciones.png" alt="Libro de reclamaciones" title="Libro de reclamaciones">
+      </a>
+                  </li>
+      </ul>
+
+
+
+</nav>
+
+
+</section>
+
+</section>
+  </div>
+  </div>
+  </div>
+</footer>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

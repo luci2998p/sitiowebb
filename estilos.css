@@ -1,0 +1,955 @@
+.porque-estudiar
+{
+    background:
+        linear-gradient(#888 1px, transparent 1px) 0 0,
+        linear-gradient(90deg, #888 1px, transparent 1px) 0 0;
+      background-size: 50px 50px; /* Ajusta el tamaño de la cuadrícula */
+}
+video {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-image: url('img/fondo.png');
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;  /* Alinea los elementos verticalmente en columna */
+  }
+
+  .text-over-video {
+    position: absolute;
+    top: 20%;  /* Ajusta según sea necesario para alinear verticalmente */
+    left: 10%;  /* Ajusta según sea necesario para alinear horizontalmente */
+    color: #fff;
+    font-size: 36px;
+    font-family: 'Libre Franklin', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+  }
+
+  .play-icon, .signup-button {
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    position: absolute;
+    left: 10%; /* Alineación horizontal para coincidir con el texto */
+    z-index: 3;
+  }
+
+  .play-icon {
+    width: 50px;
+    height: 50px;
+    top: 63%; /* baja el boton play */
+    background-color: rgb(119, 118, 118);
+  }
+
+  .signup-button {
+    width: auto;
+    height: auto;
+    padding: 10px 20px;
+    background-color: #ff69b4; /* Fondo rosado */
+    color: white; /* Letra blanca */
+    border: 2px solid white; /* Borde blanco */
+    border-radius: 5px; /* Bordes menos redondeados */
+    font-size: 16px;
+    top: 53%; /* Posicionado adecuadamente sobre el video */
+    margin-bottom: 10px; /* Espacio adicional si es necesario */
+  }
+
+  footer {
+    position: relative;
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+  }
+/* Esto es para el boton de silenciar y dar sonido al video */
+  .audio-icon {
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  position: absolute;
+  top: 64%;
+  left:14%;
+  z-index: 4;
+}
+/* para el icono de whatsapp */
+.whatsapp-icon {
+  position: absolute;
+  top: 64%;  /* Ajusta la posición vertical según sea necesario */
+  left: 18%; /* Ajusta la posición horizontal para alinearlo con otros controles */
+  z-index: 4; /* Asegúrate de que no esté oculto detrás de otros elementos */
+  border: none;
+  cursor: pointer;
+  width: 35px; /* Tamaño del ícono más pequeño */
+  height: 35px; /* Mantén la proporción del ícono */
+}
+/* para el tamaño del icono de whatsapp */
+.whatsapp-icon img {
+  width: 100%;
+  height: auto;
+  display: block; /* Esto asegura que la imagen se ajuste al contenedor */
+  border-radius: 50%; /* Si deseas bordes redondos como un ícono */
+ 
+}
+
+/* Estilo para los enlaces de navegación al pasar el mouse */
+/* Estilos para los enlaces 'prepago' */
+.navbar-dark .prepago {
+    background-color: rgba(128, 128, 128, 0.5);
+    color: white;
+    border-radius: 8px;
+    padding: 10px 15px;
+    display: block;
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+.navbar-dark .prepago:hover {
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilos para los enlaces 'otro' */
+/* Estilos generales para los enlaces 'otro' */
+.navbar-dark .otro {
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.navbar-dark .otro:hover {
+    color: #EEE;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 1);
+}
+
+.navbar-separator {
+  flex-grow: 1; /* Utiliza esto si quieres que el espacio se ajuste automáticamente */
+  /* o puedes usar un ancho fijo si lo prefieres */
+  width: 50px; /* Ejemplo de espacio fijo */
+  visibility: hidden; /* Hace que el separador no sea visible pero ocupe espacio */
+}
+
+/* Estilos generales para los enlaces 'otro' */
+.navbar-dark .navbar-nav .nav-item .otro {
+    padding-right: 15px; /* Espacio a la derecha para separar el texto del borde */
+    margin-right: 15px; /* Espacio adicional a la derecha para los elementos con borde */
+}
+
+/* Aplica un borde derecho más corto a todos los elementos excepto el último */
+.navbar-dark .navbar-nav .nav-item:not(:last-child) .otro {
+    border-right: 1px solid white; /* Borde blanco vertical */
+    padding-top: 10px; /* Reduce el padding superior para acortar la línea vertical */
+    padding-bottom: 20px; /* Reduce el padding inferior para acortar la línea vertical */
+    height: 20px; /* Reduce la altura efectiva del borde */
+}
+
+/* estilos patra las cedes en el footer */
+
+/* Estilos básicos para el contenedor principal específico */
+ul.locations-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ajusta al ancho del contenedor padre */
+}
+
+/* Estilos para cada fila dentro del .locations-nav */
+.locations-nav .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Asegura espacio entre elementos */
+    margin-bottom: 10px; /* Espacio entre filas */
+}
+
+/* Estilos para cada elemento del menú dentro de .locations-nav */
+.locations-nav .nav-item {
+    flex-grow: 1; /* Los elementos crecen de manera uniforme */
+    text-align: center; /* Centra el texto dentro de cada enlace */
+    padding: 0 0px; /* Añade un pequeño espacio lateral para separar los ítems */
+}
+
+/* Estilos para los enlaces dentro de .locations-nav */
+.locations-nav .nav-link {
+    display: block;
+    padding: 0px;
+    background-color: transparent; /* Fondo transparente */
+    color: #ffffff; /* Color del texto blanco */
+    text-decoration: underline; /* Texto subrayado */
+    border-radius: 5px; /* Bordes redondeados para los enlaces */
+    transition: color 0.3s; /* Transición suave para hover */
+}
+
+/* Efecto hover para los enlaces dentro de .locations-nav */
+.locations-nav .nav-link:hover {
+    color: #cccccc; /* Cambio de color de texto al pasar el ratón */
+}
+
+.clearfix.text-formatted {
+    background-color: transparent; /* Fondo transparente para el contenedor principal */
+    padding: 20px; /* Espacio alrededor del contenido */
+    border-radius: 15px; /* Bordes redondeados para el cuadro principal */
+    border: 2px solid #FFFFFF; /* Borde blanco para diferenciar el área de contenido */
+    width: auto; /* Ajuste automático del ancho */
+    margin: 20px; /* Margen para separar de otros elementos */
+}
+
+.clearfix.text-formatted ul {
+    list-style: none; /* Remueve los bullets de la lista */
+    padding: 0; /* Sin padding interno */
+}
+
+.clearfix.text-formatted li {
+    margin-bottom: 10px; /* Espacio entre elementos de la lista */
+    border-radius: 15px; /* Bordes redondeados para cada elemento */
+}
+/* Estilos de los cuadros semi redondos del footer*/
+.link-group {
+    display: flex; /* Establece un contenedor Flex */
+    align-items: center; /* Alinea verticalmente los elementos al centro */
+    justify-content: start; /* Alinea horizontalmente al inicio */
+    gap: 20px; /* Espacio entre los elementos del contenedor Flex */
+}
+
+.link-container {
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px 20px;
+    border: 2px solid #FFFFFF;
+    display: flex;
+    align-items: center; /* Alinea el texto y el icono en el centro */
+    justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+.link-container a {
+    text-decoration: none;
+    color: inherit; /* Hereda el color del contenedor padre */
+    display: flex;
+    align-items: center;
+}
+
+.first-link {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.first-link:hover {
+    background-color: #E8E8E8;
+}
+
+.black-background {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.black-background:hover {
+    background-color: #333333;
+}
+
+.black-background i {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+
+.briefcase a i {
+    color: #FFFFFF; /* Icono blanco */
+}
+
+.gps a i {
+    color: #FFFFFF; /* Icono blanco */
+}
+
+/*para estilo de el resto del footer */
+.contact-info ul {
+    display: flex;
+    justify-content: space-around; /* Distributes space evenly between the items */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+.sec1
+{
+  background: linear-gradient(94deg, #000 0%, #021A32 93.75%, #02213E 100%);
+  padding: 40px;
+}
+
+
+
+/* Estilos para el contenedor del botón */
+.accordion-button {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el icono y el texto */
+    border-radius: 10px; /* Borde redondo */
+    border: none;
+    overflow: hidden; /* Asegura que el borde redondo se aplique correctamente */
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0px 4px 8px rgba(14, 9, 9, 0.527); /* Borde sombreado */
+    padding: 10px; /* Espaciado interno */
+  }
+  
+  /* Estilos para el texto */
+  .field-name-titulo {
+    flex: 1; /* Hace que el texto ocupe todo el espacio disponible */
+   padding: 10px;
+  }
+  
+  
+  /* Estilos para el contenedor del icono */
+  .field-name-title-accordion {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el icono y el texto */
+  }
+  
+  /* Estilos para el icono */
+  .rounded-icon img {
+
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+  }
+  
+ 
+  
+
+
+
+/*para logos de la parte xk estudiar*/
+.field-name-titulo
+{
+    width: 400px;
+    height:90px;
+    font-size: 20px;
+    border-radius:20%;
+    text-align: center;
+}
+
+.info-block {
+  
+    
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Padding inside each block for spacing */
+    flex-basis: 48%; /* Each block takes up roughly half of the container width */
+    margin: 10px; /* Space between blocks */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
+}
+
+.upper-row, .lower-row {
+    display: flex;
+    justify-content: space-around; /* Ensures spacing is maintained around each item */
+}
+
+.info-block h5 {
+    display: flex;
+    align-items: center; /* Aligns the SVG icon vertically with the text */
+    gap: 10px; /* Space between the SVG icon and the text */
+}
+
+.info-block svg {
+    fill: rgb(160, 23, 23);
+    height: 26px;
+    width: 20px;
+}
+
+@media (max-width: 768px) {
+    .contact-info ul {
+        flex-direction: column;
+    }
+
+    .info-block {
+        flex-basis: 100%; /* Stacks the blocks on small screens */
+    }
+}
+
+
+.black-background.gps {
+    padding: 20px 20px; /* Reduce el padding para disminuir el tamaño */
+    margin: 5px; /* Ajusta el margen según necesidades */
+    font-size: 20px; /* Reduce el tamaño del texto si es necesario */
+    width: auto; /* Ajusta el ancho según el contenido o define un ancho específico */
+    max-width: 300px; /* Establece un ancho máximo si deseas limitar el tamaño */
+    display: inline-block; /* Hace que el div solo sea tan grande como su contenido */
+    height: 70px;
+  }
+
+
+/* para la raya separadora blanca */
+.footer-line {
+    border: none; /* Elimina cualquier borde predeterminado */
+    height: 5px; /* Grosor de la línea */
+    background-color: white; /* Color de la línea */
+    width: 100%; /* Asegura que la línea ocupe todo el ancho del contenedor */
+    margin: 20px 0; /* Espacio vertical antes y después de la línea */
+}
+
+/* -------Estilo para facultades debajo del video------- */
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 200vh; /* Full height of viewport */
+    overflow: hidden;
+    padding: 0 4cm; /* Añade 4 cm de espacio a ambos lados */
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure video covers the container */
+}
+
+.facultades-container {
+    position: absolute;
+    top: 115%; /* Ajusta este valor según la altura deseada */
+    left: 4cm;
+    right: 4cm;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.padre {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Esto mueve el contenido hacia el fondo */
+    height: 100vh; /* Asegura que el contenedor padre tenga altura completa de la ventana */
+}
+
+
+
+
+.facultad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 15px; /* Ajusta el espacio entre los ítems */
+    font-size: 16px; /* Adjust size as necessary */
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Size of the circle */
+    height: 50px; /* Size of the circle */
+    background-color: white; /* Circle background color */
+    color: black; /* Icon color */
+    border-radius: 50%; /* Make it round */
+    margin-bottom: 10px; /* Space between icon and text */
+}
+
+.facultad i {
+    font-size: 24px; /* Larger icon size for better visibility */
+}
+/* -------------estilos debajo del video- de los iconos de las carreras */
+.formulario-inscripciones .wrapper-form-utp {
+background: #FFFFFF;
+box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.35);
+border-radius: 20px;
+width: 100%;
+max-width: 400px;
+padding: 25px 20px;
+
+}
+.formulario-inscripciones .wrapper-form-utp form .form-header {
+margin-bottom: 20px;
+}
+.formulario-inscripciones .wrapper-form-utp form .form-header h4 {
+font-size: 23px;
+margin-bottom: 5px;
+}
+.formulario-inscripciones .wrapper-form-utp form .form-header h5 {
+font-weight: 400;
+font-size: 15px;
+margin-bottom: 0;
+}
+.formulario-inscripciones .wrapper-form-utp .form-group-radio {
+margin-bottom: 15px;
+}
+.formulario-inscripciones .wrapper-form-utp .form-group-radio .form-group.form-radio {
+margin-bottom: 6px;
+}
+.formulario-inscripciones .wrapper-form-utp .form-group-radio .form-group.form-radio input {
+display: none;
+}
+.formulario-inscripciones .wrapper-form-utp .form-group-radio .form-group.form-radio [type="radio"] + label {
+position: relative;
+color: #979797;
+display: flex;
+align-items: center;
+padding: 0 0 0 25px;
+font-size: 15px;
+font-weight: 600;
+cursor: pointer;
+}
+.formulario-inscripciones .wrapper-form-utp .form-group-radio .form-group.form-radio [type="radio"]:checked + label {
+color: #000;
+}
+.form-radio [type="radio"] + label:before, 
+.form-radio [type="radio"] + label:after {
+content: none;
+border-radius: 100px;
+}
+.formulario-inscripciones .wrapper-form-utp .form-group-radio .form-group.form-radio [type="radio"] + label::before {
+--ancho-circle: 16px;
+content: "";
+border: 1px solid #CCCCCC;
+width: var(--ancho-circle);
+height: var(--ancho-circle);
+position: absolute;
+top: 1px;
+left: 0;
+transition: border .4s;
+}
+.formulario-inscripciones .wrapper-form-utp .form-group-radio .form-group.form-radio [type="radio"] + label::after {
+--ancho-circle: 16px;
+content: "";
+background-color: #000;
+width: var(--ancho-circle);
+height: var(--ancho-circle);
+position: absolute;
+top: 1px;
+left: 0;
+border: 0 none;
+transform: scale(0);
+transition: transform .4s;
+}
+.formulario-inscripciones .wrapper-form-utp .form-group-radio .form-group.form-radio [type="radio"]:checked + label::after {
+transform: scale(.5);
+}
+.formulario-inscripciones .wrapper-form-utp .form-group-radio .form-group.form-radio [type="radio"]:checked + label::before {
+border: 1px solid #000;
+}
+.formulario-inscripciones .wrapper-form-utp .form-group p {
+font-size: 13px;
+color: #000;
+}
+.formulario-inscripciones .wrapper-form-utp .form-footer {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-top: 25px;
+}
+.formulario-inscripciones .wrapper-form-utp .form-footer .form-pager {
+font-size: 13px;
+color: #979797;
+}
+.formulario-inscripciones .wrapper-form-utp .form-footer .form-action {
+display: flex;
+align-items: center;
+column-gap: 15px;
+}
+.formulario-inscripciones .wrapper-form-utp .form-footer .form-action button.prev-btn {
+background-color: transparent;
+color: #979797;
+border: 0 none;
+padding: 12px 10px;
+column-gap: 13px;
+}
+.formulario-inscripciones .wrapper-form-utp .form-footer .form-action button {
+background-color: #D01A49;
+border: 1px solid #D01A49;
+border-radius: 100px;
+color: #FFF;
+width: auto;
+padding: 12px 25px;
+display: flex;
+align-items: center;
+column-gap: 20px;
+}
+
+#formulario-inscribete .content {
+background: #fff; /* Cambia esto por el color de fondo deseado */
+padding: 20px;
+max-width: 400px; /* O el ancho que prefieras */
+margin: auto;
+border-radius: 20px
+}
+
+.form-group-row {
+margin-bottom: 15px;
+}
+
+.form-group-radios {
+display: flex;
+justify-content: space-between;
+margin-bottom: 15px;
+}
+
+.container-radio-subgrado {
+display: flex;
+align-items: center;
+}
+
+/* Oculta el input de radio original */
+.form-check-input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
+}
+
+/* Crea un círculo personalizado para el pseudo-elemento ::before */
+.form-check-input + label:before {
+content: '';
+position: absolute;
+left: -20px;
+top: 50%;
+transform: translateY(-50%);
+height: 16px;
+width: 16px;
+background-color: #fff;
+border-radius: 50%;
+border: 1px solid #000;
+}
+
+/* Cuando el input de radio está seleccionado, cambia el diseño del ::after para que parezca seleccionado */
+.form-check-input:checked + label:after {
+content: '';
+position: absolute;
+left: -16px;
+top: 50%;
+transform: translateY(-50%);
+width: 8px;
+height: 8px;
+background: #000;
+border-radius: 50%;
+}
+
+/* Estilos para la etiqueta que sigue al input de radio para que se alinee adecuadamente */
+.form-check-input + label {
+margin-left: 30px;
+position: relative;
+cursor: pointer;
+display: inline-block;
+padding-left: 5px; /* Ajusta según sea necesario */
+font-size: 15px;
+}
+
+.form-check label {
+padding-left: 25px;
+color: #979797;
+}
+
+.form-check-label {
+position: relative;
+font-size: 12px!important;
+font-weight: 100!important;
+}
+
+.form-group {
+display: flex;
+flex-direction: column;
+}
+
+.form-control {
+padding: 10px;
+margin-top: 5px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+.form-control.no-valid {
+border: 1px solid #ccc;
+border-radius: 15px;
+}
+
+.form-control:focus {
+outline: none;
+border-color: #000; /* O cualquier color para el foco */
+}
+
+.form-label-group {
+position: relative;
+}
+
+.form-label-group input {
+width: 100%;
+padding: 18px 10px 10px 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+.form-label-group label {
+position: absolute;
+top: 0;
+left: 10px;
+right: 10px;
+color: #aaa; /* Color del placeholder */
+pointer-events: none; /* Permite clics a través del label para enfocar el input */
+transition: all 0.2s ease-out;
+}
+
+/* Sube el label y reduce su tamaño cuando el input está enfocado o lleno */
+.form-label-group input:not(:placeholder-shown) + label,
+.form-label-group input:focus + label {
+top: 20px;
+left: 11px;
+right: 0;
+font-size: 13px;
+color: #7f7f7f;
+}
+
+/* Opcional: Puedes cambiar el color del borde del input cuando está enfocado */
+.form-label-group input:focus {
+border-color: #666;
+outline: none; /* Remueve el contorno predeterminado */
+}
+
+.form-politicas {
+margin-top: 20px;
+}
+
+.form-check-label {
+display: block;
+margin-bottom: 10px;
+font-size: 0.9rem;
+}
+
+.mensajes {
+color: #666;
+font-size: 0.8rem;
+margin-top: 5px;
+}
+
+.btn {
+padding: 10px 15px;
+border: none;
+border-radius: 20px;
+cursor: pointer;
+margin-top: 20px;
+}
+
+.btn-disabled {
+background-color: #E78CA3;
+color: #fff;
+}
+
+#siguiente {
+width: 150px;
+padding: 12px;
+background: #D01A49;
+opacity: 0.5
+}
+
+#siguiente:hover {
+color: #fff;
+}
+
+.btn-back, .btn-send {
+background-color: #f06292; /* Color del botón */
+color: #fff;
+}
+
+#siguiente svg > path {
+fill: #fff;
+}
+
+/* Estilos para la respuesta de agradecimiento */
+.msg-gracias {
+text-align: center;
+}
+
+.msg-gracias h3 {
+color: #000;
+margin-top: 20px;
+}
+
+.msg-gracias p {
+color: #666;
+font-size: 0.9rem;
+}
+
+.form-actions {
+justify-content: space-between;
+display: flex;
+align-items: center;
+}
+
+.form-actions > p > svg > path,
+.form-actions > svg > path {
+fill: #000;
+}
+
+/* Estilo base para el contenedor del checkbox */
+.form-check {
+position: relative;
+}
+
+/* Ocultar el checkbox real */
+.form-check input[type="checkbox"] {
+opacity: 0;
+position: absolute;
+cursor: pointer;
+height: 0;
+width: 0;
+left: 0;
+margin-left: -30px; /* Alinea la posición del checkbox real con el pseudo-elemento */
+}
+
+/* Estilo para simular el cuadrado del checkbox */
+.form-check input[type="checkbox"] + label:before {
+content: '';
+position: absolute;
+left: 0;
+top: 50%;
+transform: translateY(-50%);
+width: 20px; /* tamaño del cuadrado */
+height: 20px;
+background: #fff;
+border-radius: 4px; /* bordes redondeados */
+border: 2px solid #000; /* borde del cuadrado */
+cursor: pointer;
+transition: background-color 0.2s;
+}
+
+/* Cuando el checkbox está marcado, cambia el fondo a negro */
+.form-check input[type="checkbox"]:checked + label:before {
+background-color: #000;
+border-color: #000; /* opcional, si quieres que el borde sea del mismo color */
+}
+
+/* Estilo para la etiqueta (label) que sigue al checkbox */
+.form-check label {
+cursor: pointer;
+display: inline-block;
+line-height: 1.2;
+vertical-align: middle;
+}
+
+/* Ajustes para cuando el usuario hace clic en el checkbox */
+.form-check input[type="checkbox"]:focus + label:before {
+outline: none;
+box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12); /* o cualquier otro estilo de foco que prefieras */
+}
+
+.form-check .form-check-input:checked + label:after {
+content: '';
+position: absolute;
+left: -16px;
+top: 50%;
+transform: translateY(-50%);
+width: 0px!important;
+height: 0px!important;
+background: #000;
+border-radius: 50%;
+}
+
+.form-check-label {
+margin: 0 0 10px 0!important;
+}
+
+.paso-1 .form-label-group.error:after, .paso-1 .form-group.error:after, .paso-2 .form-group.error:after, .paso-2 .form-label-group.error:after, .paso-1 .form-check.error:after {
+content: attr(data-mensaje);
+line-height: 1;
+font-size: 10.5px;
+color: #D01A49;
+font-family: monospace;
+height: 2px;
+margin-left: 0px;
+margin-top: 5px;
+}
+
+.form-group select {
+border-radius: 15px!important;
+}
+
+select.form-control {
+background-image: url(/themes/utp/images/arrow-dow.png);
+background-position: 97% center;
+background-repeat: no-repeat;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+cursor: pointer;
+padding: 0.375rem 2.5rem 0.375rem 0.75rem;
+}
+
+#sedesCerradas, .ruc-utp {
+font-size: 10px
+}
+
+#volver {
+color: #000;
+background: transparent;
+display: flex;
+align-items: center;
+gap: 10px;
+font-size: 14px;
+}
+
+#volver > svg > path {
+fill: #000;
+}
+
+#enviar-form {
+width: 130px;
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 12px;
+background: #D01A49;
+opacity: 0.5;
+}
+
+#enviar-form:hover {
+background: #D01A49;
+color: #fff;
+} 
+
+  .testimonios
+  {
+    background: linear-gradient(225deg, #CEE6FD 0%, #F9D2DC 100%);
+
+  }
+
+  .group-images {
+    display: flex;
+    justify-content: flex-end; /* Alinea las imágenes a la derecha */
+    margin-bottom: 20px; /* Espaciado entre grupos de imágenes */
+  }
+  
+  .field-name-imagen 
+  {
+    margin-left: 20px; /* Espacio entre cada imagen */
+  }
+  .field-name-body-item-accordion
+  {
+    font-size: 5px;
+    text-align: center;
+  }
+  .chat-utp {
+    background: linear-gradient(360deg, #000 0%, #021B33 100%);
+    padding: 50px;
+}
+.view-header
+{
+color: white;
+font-size: 20px;
+}
